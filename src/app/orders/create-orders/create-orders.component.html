@@ -1,0 +1,73 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Create Order</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-5">
+                                  <mat-form-field class="example-full-width">
+                                      <input matInput type="number" placeholder="Distributor Id" formControlName="distributorId">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput type="number" placeholder="Order Date" formControlName="order_date" >
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Create Order</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Create Order Lines</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <mat-form-field class="col-sm-2">
+                                    <mat-label>Line No:</mat-label>
+                                    <input matInput type="number"  placeholder="Line Number" >
+                                </mat-form-field>
+                                <mat-form-field class="col-sm-2">
+                                    <mat-label>Order Id</mat-label>
+                                    <input matInput type="number"  placeholder="Order Id" >
+                                </mat-form-field>
+                                <mat-form-field class="col-sm-2">
+                                    <mat-label>Product Id</mat-label>
+                                    <input matInput type="number"  placeholder="Product Id" >
+                                </mat-form-field>
+                                <mat-form-field class="col-sm-2">
+                                    <mat-label>Quantity</mat-label>
+                                    <input matInput type="number" placeholder="Quantity" >
+                                </mat-form-field>
+                                <mat-form-field class="col-sm-2">
+                                    <mat-label>Price</mat-label>
+                                    <input matInput type="number"  placeholder="Price" >
+                                </mat-form-field>
+                                <div class="col-sm-2">
+                                  <button type="button" class="btn btn-primary" (click)="addOrderDetails()"><i class="material-icons">add</i></button>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Create Order Lines</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
