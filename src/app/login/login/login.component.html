@@ -1,0 +1,56 @@
+
+<div class="main-content">
+    <div class="">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="card col-md-4">
+                    <div class="card-header card-header-danger">
+                        <h4 style="text-align: center" class="card-title">Login</h4>
+                        <div class="justify-content-center row mt-3">
+                            <div class="col-2 text-center ms-auto">
+                              <a class="btn btn-link px-3" href="javascript:;">
+                                <i class="fa fa-facebook text-white text-lg"></i>
+                              </a>
+                            </div>
+                            <div class="col-2 text-center px-1">
+                              <a class="btn btn-link px-3" href="javascript:;">
+                                <i class="fa fa-github text-white text-lg"></i>
+                              </a>
+                            </div>
+                            <div class="col-2 text-center me-auto">
+                              <a class="btn btn-link px-3" href="javascript:;">
+                                <i class="fa fa-google text-white text-lg"></i>
+                              </a>
+                            </div>
+                         </div>
+                    </div>
+               <div class="card-body">
+                <form [formGroup]="loginForm" class="form-horizontal form-group" (ngSubmit)="login()">
+                  <div class="input-group input-group-outline my-3">
+                    <label>Email</label>
+                    <input style="margin-left: 30px" formControlName= "email" type="email" class="form-control">
+                  </div>
+                  <div class="input-group input-group-outline mb-3">
+                    <label class="form-label">Password</label>
+                    <input style="margin-left: 5px" mstInput formControlName= "password" type="password" class="form-control">
+                  </div>
+                  <div class="form-check form-switch d-flex align-items-center mb-3">
+                    <input class="mat-check-box-lg" type="checkbox" id="rememberMe" checked>
+                    <label class="form-check-label mb-0 ms-6" for="rememberMe">Remember me</label>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-danger pull-center">Sign in</button>
+                  </div>
+                  <p class="mt-4 text-sm text-center">
+                    Don't have an account?
+                    <a href="../pages/sign-up.html" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                  </p>
+                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
