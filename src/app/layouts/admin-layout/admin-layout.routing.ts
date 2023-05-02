@@ -9,6 +9,7 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { CreateOrdersComponent } from 'app/orders/create-orders/create-orders.component';
+import { DisplayOrderLinesComponent } from 'app/orders/display-order-lines/display-order-lines.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -61,5 +62,6 @@ export const AdminLayoutRoutes: Routes = [
     // { path: 'maps',           component: MapsComponent },
     // { path: 'notifications',  component: NotificationsComponent },
     // { path: 'upgrade',        component: UpgradeComponent },
-    { path: 'createorder',    component: CreateOrdersComponent }
+    { path: 'createorder',    component: CreateOrdersComponent },
+    { path: 'displayorder',    component: DisplayOrderLinesComponent }
 ];

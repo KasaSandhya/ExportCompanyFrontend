@@ -18,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { CreateOrdersComponent } from 'app/orders/create-orders/create-orders.component';
+import { DisplayOrderLinesComponent } from 'app/orders/display-order-lines/display-order-lines.component';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { CreateOrdersComponent } from 'app/orders/create-orders/create-orders.co
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-    CreateOrdersComponent
+    CreateOrdersComponent,
+    DisplayOrderLinesComponent
   ]
 })
 
