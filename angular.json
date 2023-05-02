@@ -22,6 +22,7 @@
             ],
             "styles": [
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "src/assets/scss/material-dashboard.scss",
               "src/assets/css/demo.css"
             ],
@@ -122,6 +123,7 @@
             ],
             "styles": [
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "src/assets/scss/material-dashboard.scss",
               "src/assets/css/demo.css"
             ],

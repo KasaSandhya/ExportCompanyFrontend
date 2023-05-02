@@ -14,7 +14,7 @@ export class CreateOrdersComponent implements OnInit {
   //orderLinesForm: any = FormGroup;
   orderLinesForm: FormGroup;
   submitted = false;
-  orderLine = 1;
+  orderInfo : any =[];
 
   constructor(private formBuilder: FormBuilder,
     private commonService:CommonService, private datePipe: DatePipe) { 
@@ -36,25 +36,17 @@ export class CreateOrdersComponent implements OnInit {
 
   createOrder(){
     this.submitted = true;
-    console.log("ISO",this.orderForm.value.orderDate.toISOString())
     if (this.orderForm.value.orderDate){
       //this.orderForm.value.orderDate = this.datePipe.transform(this.orderForm.get('orderDate').value, 'yyyy-MM-dd HH:mm:ss Z');
       this.orderForm.value.orderDate = moment(this.orderForm.value.orderDate).toISOString()
     }
     console.log(this.orderForm.value);
     if (this.orderForm.valid) {
-      this.commonService.createOrders(this.orderForm.value)
-        .pipe()
-        .subscribe({
-            next: () => {
-                //this.alertService.success('Registration successful', { keepAfterRouteChange: true });
-                alert('Create order successful');
-            },
-            error: (error: any) => {
-                //this.alertService.error(error);
-                alert(error);
-            }
-        });
+      this.commonService.createOrders(this.orderForm.value).subscribe((response) => { 
+        this.orderInfo = response;
+        alert('Create Order Successful');
+        console.log("this.orderInfo.id",this.orderInfo.id)
+      });
     }
   }
   createOrderLine(){
@@ -64,15 +56,14 @@ export class CreateOrdersComponent implements OnInit {
     for(let orderLine of  this.orderLinesForm.value.orderLines){
       console.log("orderLine",orderLine);
       if (this.orderLinesForm.valid) {
-        this.commonService.createOrderLines(orderLine)
+        this.commonService.createOrderLines(this.orderInfo.id, orderLine)
           .pipe()
           .subscribe({
               next: () => {
-                  //this.alertService.success('Registration successful', { keepAfterRouteChange: true });
-                  alert('Create order successful');
+                  alert('Create Order Line Successful');
               },
               error: (error: any) => {
-                  //this.alertService.error(error);
+                  console.log('error',error);
                   alert(error);
               }
           });

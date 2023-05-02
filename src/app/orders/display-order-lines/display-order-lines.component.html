@@ -30,12 +30,20 @@
                     </div>
                     <div class="card-body">
                             <div class="row">
-                                <div>
-                                    <label class="text-primary"><h4>Purchase Order:</h4></label><br>
-                                    <label class="text-primary"><h4>Ordered By:</h4></label><br>
-                                    <label class="text-primary"><h4>Order Date:</h4></label><br>
-                                    <label class="text-primary"><h4>Order Status:</h4></label>                                
-                                </div>
+                                <label class="text-primary col-md-3"><h4>Purchase Order:</h4></label>
+                                <span class="text-dark col-md-3">{{ordersList.id}}</span>
+                            </div>
+                            <div class="row">
+                                <label class="text-primary col-md-3"><h4>Ordered By:</h4></label>
+                                <span class="text-dark col-md-3">{{distributor?.firstName}} {{distributor?.lastName}}</span>
+                            </div>
+                            <div class="row">
+                                <label class="text-primary col-md-3"><h4>Order Date:  </h4></label>
+                                <span class="text-dark col-md-3">{{ordersList.orderDate | date }}</span>
+                            </div>
+                            <div class="row">    
+                                <label class="text-primary col-md-3"><h4>Order Status:</h4></label>
+                                <span class="text-dark col-md-3">{{ordersList.orderStatus}}</span>                                
                             </div>    
                             <table class="table">
                                 <thead class="text-primary">

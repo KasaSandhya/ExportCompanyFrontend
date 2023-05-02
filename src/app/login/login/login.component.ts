@@ -12,6 +12,8 @@ import { NotificationsService } from 'app/services/notifications.service';
 export class LoginComponent implements OnInit {
  
   loginForm: any = FormGroup;
+  hide: boolean = true;
+  
   constructor(private formBuilder: FormBuilder, private commonService: CommonService,
               private router: Router, private notification: NotificationsService) { 
 
@@ -24,6 +26,10 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  myFunction() {
+    this.hide = !this.hide;
+  }
+  
   login(){
     if(!this.loginForm.valid){
        this.notification.showNotification("Please fill required elements", 'danger');

@@ -11,6 +11,7 @@ export class DisplayOrderLinesComponent implements OnInit {
 
   ordersInfo: any = FormGroup;
   ordersList: any =[];
+  distributor: any;
   isShow: boolean = false;
 
   constructor(private commonService: CommonService, private formBuilder: FormBuilder) { }
@@ -23,6 +24,7 @@ export class DisplayOrderLinesComponent implements OnInit {
     this.commonService.getOrdersInfo(id).subscribe((response) => {
       console.log("response", response);
       this.ordersList = response;
+      this.distributor = this.ordersList.distributor;
       if(this.ordersList.orderLines.length > 0){
         //this.isShow = true;
       }

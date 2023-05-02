@@ -5,6 +5,7 @@ import { commonHeaders } from "./common.headers";
 import {Router} from '@angular/router';
 import { Order } from 'app/models/order';
 import { OrderLine } from 'app/models/orderlines';
+import { Users } from 'app/models/users';
 
 
 @Injectable({
@@ -54,9 +55,9 @@ export class CommonService {
     );
   }
 
-  createOrders(orderData: Order) {
-    console.log("service", orderData);
-    return this.http.post(this.baseUrl + `order`, orderData, {
+  signup(user: Users) {
+    console.log("in the service method ", user)
+      return this.http.post(this.baseUrl + `users`, user,{
       headers: commonHeaders,
     })
     .pipe(
@@ -73,14 +74,34 @@ export class CommonService {
     );
   }
 
-  createOrderLines(orderLine: OrderLine) {
-    console.log("service", orderLine);
-    return this.http.post(this.baseUrl + `orderLine`, orderLine, {
+  createOrders(orderData: Order) {
+    console.log("service", orderData);
+    return this.http.post(this.baseUrl + `order`, orderData, {
       headers: commonHeaders,
     })
     .pipe(
       map((data) => {
-        console.log("data", data);
+        console.log("Order", data);
+        return data;
+      })
+    )
+    .pipe(
+      catchError((err) => {
+        console.log(err, "ERERER>>>>>>>>>>>>>>>>>");
+        alert(err.statusText);
+        return err;
+      })
+    );
+  }
+
+  createOrderLines(orderId, orderLine: OrderLine) {
+    console.log("service", orderLine);
+    return this.http.post(this.baseUrl + `orders/${orderId}/order-lines`, orderLine, {
+      headers: commonHeaders,
+    })
+    .pipe(
+      map((data) => {
+        console.log("Order Line", data);
         return data;
       })
     )

@@ -1,0 +1,42 @@
+
+<div class="main-content">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="card col-md-4">
+                    <div class="card-header card-header-danger">
+                        <h4 style="text-align: center" class="card-title">Sign Up</h4>
+                    </div>
+               <div class="card-body">
+                <form [formGroup]="signupForm" class="form-horizontal form-group" (ngSubmit)="signup()">
+                    <div class="input-group my-3">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi-person-square"></i></span>
+                        <input type="text" class="form-control" placeholder="UserName" aria-describedby="basic-addon1" formControlName="username" >
+                    </div>
+                  <div class="input-group my-3">
+                    <span class="input-group-text" id="basic-addon2"><i class="bi bi-person-fill"></i></span>
+                    <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon2" formControlName= "email" >
+                  </div>
+                  <div class="input-group my-3">
+                    <span class="input-group-text" id="basic-addon3"><i class="bi bi-lock-fill"></i></span>
+                    <input [type]="hide ? 'password' : 'text'" class="form-control" placeholder="Password" formControlName= "password" aria-describedby="basic-addon3">
+                    <span class="input-group-text" (click)="myFunction()" id="basic-addon3"><i [ngClass]="hide ? 'bi bi-eye-slash-fill' : 'bi bi-eye'"></i></span>
+                  </div>
+                  <div class="form-check form-check-info mb-3">
+                    <input class="mat-check-box-lg ml-3" type="checkbox" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                      I agree the <a href="javascript:;" class="text-dark font-weight-bolder">Terms and Conditions</a>
+                    </label>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-danger pull-center">Sign Up</button>
+                  </div>
+                  <p class="mt-4 text-sm text-center">
+                    Already have an account?
+                    <a routerLink="/signin" class="text-primary text-gradient font-weight-bold">Sign In</a>
+                  </p>
+                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { SignupComponent } from './signup/signup/signup.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
