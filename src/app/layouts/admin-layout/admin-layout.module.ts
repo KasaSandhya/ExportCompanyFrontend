@@ -11,14 +11,17 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatRippleModule} from '@angular/material/core';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatSelectModule} from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatRippleModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { CreateOrdersComponent } from 'app/orders/create-orders/create-orders.component';
 import { DisplayOrderLinesComponent } from 'app/orders/display-order-lines/display-order-lines.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -32,6 +35,8 @@ import { DisplayOrderLinesComponent } from 'app/orders/display-order-lines/displ
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   declarations: [
     DashboardComponent,
@@ -44,7 +49,8 @@ import { DisplayOrderLinesComponent } from 'app/orders/display-order-lines/displ
     UpgradeComponent,
     CreateOrdersComponent,
     DisplayOrderLinesComponent
-  ]
+  ],
+  providers: [DatePipe],
 })
 
 export class AdminLayoutModule {}
