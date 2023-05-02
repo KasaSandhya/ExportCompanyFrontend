@@ -23,7 +23,6 @@ export class DisplayOrderLinesComponent implements OnInit {
     this.commonService.getOrdersInfo(id).subscribe((response) => {
       console.log("response", response);
       this.ordersList = response;
-      console.log("this.ordersList", this.ordersList.orderId)
       if(this.ordersList.orderLines.length > 0){
         //this.isShow = true;
       }
