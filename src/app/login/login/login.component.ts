@@ -49,7 +49,4 @@ export class LoginComponent implements OnInit {
     
   }
 
-  logout() {
-    this.router.navigate(['/login']);
-  }
 }

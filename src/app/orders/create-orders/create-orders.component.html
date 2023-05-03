@@ -11,8 +11,14 @@
                             <div class="row">
                                 <div class="col-md-5">
                                   <mat-form-field class="example-full-width">
-                                      <input matInput type="number" placeholder="Distributor Id" formControlName="distributorId">
-                                    </mat-form-field>
+                                      <!-- <input matInput type="number" placeholder="Distributor Id" formControlName="distributorId"> -->
+                                      <mat-label>Distributor Name</mat-label>
+                                      <mat-select (selectionChange)="changeDestributor($event)">
+                                        <mat-option *ngFor="let distributor of distributorInfo" [value]="distributor.id">
+                                            {{ distributor.firstName }} {{distributor.lastName}}
+                                        </mat-option>
+                                      </mat-select>
+                                  </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
@@ -51,24 +57,24 @@
                                     <mat-label>Line No:</mat-label>
                                     <input matInput type="number"  placeholder="Line Number" formControlName="linenum">
                                 </mat-form-field>
-                                <mat-form-field class="col-sm-2">
-                                    <mat-label>Order Id</mat-label>
-                                    <input matInput type="number"  placeholder="Order Id" formControlName="orderId">
-                                </mat-form-field>
-                                <mat-form-field class="col-sm-2">
-                                    <mat-label>Product Id</mat-label>
-                                    <input matInput type="number"  placeholder="Product Id" formControlName="productId">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Product Name</mat-label>
+                                    <mat-select (selectionChange)="changeProduct(i,$event)">
+                                      <mat-option *ngFor="let product of productInfo" [value]="product">
+                                          {{ product.name }}
+                                      </mat-option>
+                                    </mat-select>
                                 </mat-form-field>
                                 <mat-form-field class="col-sm-2">
                                     <mat-label>Quantity</mat-label>
-                                    <input matInput type="number" placeholder="Quantity" formControlName="quantity">
+                                    <input matInput type="number" placeholder="Quantity" (change)="quantityChange(i,$event)" formControlName="quantity">
                                 </mat-form-field>
                                 <mat-form-field class="col-sm-2">
                                     <mat-label>Price</mat-label>
-                                    <input matInput type="number"  placeholder="Price" formControlName="price">
+                                    <input matInput type="number"  placeholder="Price" formControlName="price" readonly>
                                 </mat-form-field>
                                 <div class="col-sm-2">
-                                    <button type="button" class="btn btn-primary" (click)="removeOrderLine()"><i class="material-icons">delete</i></button>
+                                    <button type="button" class="btn btn-primary" (click)="removeOrderLine(i)"><i class="material-icons">delete</i></button>
                                   </div>
                               </div>
                             </div>

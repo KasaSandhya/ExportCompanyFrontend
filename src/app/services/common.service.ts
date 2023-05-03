@@ -74,6 +74,43 @@ export class CommonService {
     );
   }
 
+  getdistributorInfo(){
+      return this.http.get(this.baseUrl + `distributor`,{
+        headers: commonHeaders,
+      })
+      .pipe(
+        map((data) => {
+          console.log("data", data);
+          return data;
+        })
+      )
+      .pipe(
+        catchError((err) => {
+          console.log(err, "ERERER>>>>>>>>>>>>>>>>>");
+          return err;
+        })
+      );
+  }
+
+  getproductInfo(){
+    return this.http.get(this.baseUrl + `product`,{
+      headers: commonHeaders,
+    })
+    .pipe(
+      map((data) => {
+        console.log("data", data);
+        return data;
+      })
+    )
+    .pipe(
+      catchError((err) => {
+        console.log(err, "ERERER>>>>>>>>>>>>>>>>>");
+        return err;
+      })
+    );
+  }
+
+
   createOrders(orderData: Order) {
     console.log("service", orderData);
     return this.http.post(this.baseUrl + `order`, orderData, {
